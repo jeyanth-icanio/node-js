@@ -1,13 +1,13 @@
 pipeline {
     agent any
        stages {
-          stage('buld'){
-              step{
+          stage('buld') {
+              steps {
                 sh 'npm install'
               }
           }
-          stage('deploy'){
-             step{
+          stage('deploy') {
+             steps {
                  sh 'pm2 start --name node npm -- start'
              }
           }
