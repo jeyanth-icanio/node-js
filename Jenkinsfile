@@ -8,6 +8,7 @@ pipeline {
           }
           stage('deploy') {
              steps {
+                 sh 'pm2 delete node'
                  sh 'pm2 start --name node npm -- start'
              }
           }
